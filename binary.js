@@ -3,15 +3,26 @@ const testArrayGanjil = [3, 31, 89, 53, 53, 85, 77, 21, 55];
 
 function ownSort(arr) {
   // Your sorting code
-  for(var i=0;i<arr.length;i++){
-    var angkaTerkecil = arr[i];
-    for(var j=i+1;j<arr.length;j++){
-      if(arr[j] < angkaTerkecil){
-        arr[i] = arr[j];
-        arr[j] = angkaTerkecil;
-        angkaTerkecil = arr[i];
+
+  for(var i=1;i<arr.length;i++){
+
+    var j = i-1;
+    var angkaSesudah = arr[i];
+    var angkaSebelum = arr[j];
+    var counter=0;
+    
+    while(angkaSebelum > angkaSesudah){
+        arr[i-counter] = angkaSebelum;
+        arr[j-counter] = angkaSesudah;
+
+        if(arr[j-counter] == undefined){
+          break;
+        }
+        counter++;
+        angkaSesudah = arr[i-counter];
+        angkaSebelum = arr[j-counter];
       }
-    }
+
   }
   return arr;
 }
