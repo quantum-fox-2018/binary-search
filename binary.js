@@ -1,5 +1,25 @@
 'use strict'
 
+/*
+PSEUDOCODE
+  FUNCTION BINARY SEARCH START
+    GET PARAMETER search, array (array IS ASCENDING SORTED)
+    CREATE NEW VARIABLE left, SET TO 0
+    CREATE NEW VARIABLE right, SET TO LENGTH OF array-1
+    WHILE left LESS OR EQUALS THAN right, DO
+      CREATE NEW VARIABLE middle
+      SET middle TO FLOOR OF (lef+right)/2
+      IF search EQUALS TO middle
+        RETURN middle
+      ELSE IF search LESS THAN array[middle]
+        SET right TO middle-1
+      ELSE IF search HIGHER THAN array[middle]
+        SET left TO middle+1
+
+    RETURN -1
+  FUNCTION END
+*/
+
 var testArrayGenap = [40, 18, 22, 32, 90, 10, 10, 22, 8]
 var testArrayGanjil = [3, 31, 89, 53, 53, 85, 77, 21, 55]
 
