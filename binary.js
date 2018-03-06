@@ -1,5 +1,30 @@
 'use strict'
 
+//PSEUDOCODE
+/*
+  Melakukan sort di function ownSort untuk variable arrayGenapSorted dan arrayGanjilSorted dengan teknik insertion sort
+  Looping FOR, limit bawah i = 1 dan limit atas arr.length
+    Looping FOR, limit bawah x = i selama x > 0 dan x decrement 1 setiap selesai Looping
+    IF arr[x-1] > arr[x], maka melakukan swaping
+      mendifine dan initialize variable temp = arr[x]
+      arr[x] sama dengan arr[x-1]
+      arr[x-1] = temp
+  Lalu mereturn arr
+
+  Melakukan binary search di fungsi binary_search yang menerima parameter number bernama search dan array yang telah disort
+  mendifine dan initialize variable mid = array.length dibagi 2 lalu di floor
+  IF array[mid] !== search
+    IF array.length ===1 melakukan return -1 karena sudah pasti hasil cari tidak sama
+    IF search > array[mid]
+      array di slice, limit bawah mid dan limit atas array.length
+    ELSE array di slice, limit bawah 0 dan limit atas mid
+    Lalu memanggil kembali fungsi binary_search dengan parameter yang saama
+  ELSE return mid
+
+
+
+*/
+
 var testArrayGenap = [40, 18, 22, 32, 90, 10, 10, 22, 8];
 var testArrayGanjil = [3, 31, 89, 53, 53, 85, 77, 21, 55];
 
@@ -17,7 +42,6 @@ function ownSort(arr) {
 }
 
 function binary_search (search, array) {
-  debugger;
   var mid = Math.floor(array.length/2);
 
   if (array[mid] !== search) {
