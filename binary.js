@@ -19,35 +19,29 @@ function ownSort(arr) {
   return arr
 }
 
-function binary_search (search, array) {
+function binary_search(search, array) {
   // Your searching code
-  // return 0;
+  var batasAtas=0
+  var batasBawah=array.length-1
+  var found=false
   var middle
-  var evenMiddle
-  var divTwo=array.length/2
-  if(array.length%2!==0){
-    middle=Math.floor(divTwo)-1
+  while(batasAtas<=batasBawah && found===false){
+    middle=Math.floor((batasAtas+batasBawah)/2)
+    if(array[middle]===search){
+      found=true
+    }
+    else if(array[middle]<search) {
+      batasAtas=middle+1
+    }
+
+    else{
+      batasBawah=middle-1
+    }
   }
-  else{
-    evenMiddle=(divTwo)+((divTwo)-1)
-  }
-  if(search===array[middle]){
+  if(found){
     return middle
   }
-  else if(search<array[middle]){
-    for (var i = 0; i < middle; i++) {
-      if(search===array[i]){
-        return i
-      }
-    }
-    return -1
-  }
   else{
-    for (var i = middle; i < array.length; i++) {
-      if(search===array[i]){
-        return i
-      }
-    }
     return -1
   }
 }
