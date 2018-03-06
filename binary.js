@@ -1,4 +1,36 @@
 'use strict'
+/**
+ * STEPS in Binary Search:
+ * 1. Sort
+ * 2. Search array
+ * 3. Make variables for lowest value, middle value, and highest value,
+ * 4. IF the middle value is the same as the search value => return the middle value index
+ * 5. ELSE IF the middle value is higher then search value => change the highest value to the middle value and find the new middle value by adding the new highest value and the low value then divide it by 2.
+ * 6. ELSE IF the middle value is lower then search value => change the lowest value to the middle value and find the new middle value by adding the new highest value and the low value then divide it by 2.
+ * 7. repeat process 4 through 6 until the lower value, middle value, and highest value have the same index.
+ * 8. IF the loop is done and the search value is still unfound => return -1
+ * 
+ * 
+ * PSEUDOCODE for BINARY SEARCH
+ * (after sort)
+ * 
+ * SET low as 0
+ * SET high as array.length - 1
+ * SET middle as low added by high then divide it by 2. The total value of middle is then substracted by 1.
+ * 
+ * WHILE low is not equal to middle and low is not equal to high
+ *  IF array[middle] is equal to search value return middle
+ *  ELSE IF array[middle] is greater then search value
+ *    SET high as middle
+ *    SET middle as low added by high then divide it by 2.
+ *  ELSE IF array[middle] is lower then search value
+ *    SET low as middle
+ *    SET middle as low added by high then divide it by 2.
+ * 
+ * IF array[middle] is equal to search value return middle
+ * ELSE return -1     
+ *  
+ */
 
 var testArrayGenap = [40, 18, 22, 32, 90, 10, 10, 22, 8]
 var testArrayGanjil = [3, 31, 89, 53, 53, 85, 77, 21, 55]
@@ -19,6 +51,7 @@ function ownSort(arr) {
 
 function binarySearch (search, array) {
   // Your searching code
+  
   //RECURSIVE not finished!
   // if(array.length ===  1 && array[0] !== search) return -1
   // else{
