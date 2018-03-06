@@ -3,7 +3,7 @@
 /*
 PSEUDOCODE
   FUNCTION BINARY SEARCH START
-    GET PARAMETER search, array (array IS ASCENDING SORTED)
+    GET PARAMETER search, array (array IS ASCENDING SORTED WITH INSERTION METHOD)
     CREATE NEW VARIABLE left, SET TO 0
     CREATE NEW VARIABLE right, SET TO LENGTH OF array-1
     WHILE left LESS OR EQUALS THAN right, DO
@@ -26,20 +26,16 @@ var testArrayGanjil = [3, 31, 89, 53, 53, 85, 77, 21, 55]
 function ownSort(arr) {
   // Your sorting code
   for (let i = 0; i < arr.length; i++) {
-    var indexMin = i;
-
-    for (let j = i+1; j < arr.length; j++) {
-      if (arr[j] < arr[indexMin]) {
-        indexMin = j;
+    var pointer = i;
+    for (let j = i-1; j >= 0; j--) {
+      if (arr[pointer] < arr[j]) {
+        var temp = arr[pointer];
+        arr[pointer] = arr[j];
+        arr[j] = temp;
+        pointer = j;
       }
     }
-
-    if (indexMin !== i) {
-      var temp = arr[i];
-      arr[i] = arr[indexMin];
-      arr[indexMin] = temp;
-
-    }
+    //console.log(arr, i);
   }
 
   return arr;
