@@ -25,6 +25,6 @@ console.log(binary_search(53, arrayGanjilSorted))
 console.log(binary_search(3, arrayGanjilSorted))
 console.log(binary_search(2, arrayGanjilSorted))
 
-module.exports = {
-  binary_search
-}
+// module.exports = {
+//   binary_search
+// }
