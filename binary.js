@@ -37,14 +37,15 @@ var testArrayGanjil = [3, 31, 89, 53, 53, 85, 77, 21, 55]
 
 function ownSort(arr) {
   // Your sorting code
-  for(let counter = 0; counter<arr.length; counter++){
-    for(let counter2 = counter; counter2<arr.length; counter2++){
-      if(arr[counter] > arr[counter2]){
-        let temp = arr[counter];
-        arr[counter] = arr[counter2];
-        arr[counter2] = temp;
-      }
+  for(let counter = 1; counter<arr.length; counter++){
+    let newCount = counter
+    while(arr[newCount] < arr[newCount - 1]){
+        let temp = arr[newCount];
+        arr[newCount] = arr[newCount -1];
+        arr[newCount-1] = temp;
+        newCount--;
     }
+   
   }
   return arr;
 }
