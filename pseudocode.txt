@@ -1,0 +1,57 @@
+/*Pseudocode Insertion search
+CREATE FUNCTION 'ownSort()' with parameter 'arr'
+  SET 'i' with 0
+  FOR 'i' TO length of 'arr', 'i' increase by 1 DO
+
+      IF 'arr[i]' more than equals with 'arr[i+1]' THEN
+          SET 'temp1' with 'arr[i]'
+          STORE 'arr[i]' with 'arr[i+1]'
+          STORE 'arr[i+1]' with 'temp1'
+      END IF
+
+      SET 'j' with 'i'
+      FOR 'j' TO 0, 'j' decrease by 1 DO
+          IF 'arr[j]' < arr[j-1] THEN
+              SET 'temp2' with 'arr[j]'
+              STORE 'arr[j]' with 'arr[j-1]'
+              STORE 'arr[j-1]' with 'temp2'
+      END FOR
+  END FOR
+
+  DISPLAY 'arr'
+END FUNCTION
+*/
+
+
+/*Pseudocode binary_search
+CREATE FUNCTION 'binary_search()' with parameter 'search' and 'array'
+    SET 'mid' with floor() result of 'array.length / 2'
+
+    IF 'array.length' more than 1 THEN
+        IF 'arrray[mid]' more than 'search' THEN
+            SET 'kiri' with result of slice 'array' with parameter '0, mid'
+
+            CALL FUNCTION 'binary_search' with parameter 'search, kiri'
+        ELSE IF 'array[mid]' less than equals with 'search' THEN
+            SET 'kanan' with result of slice 'array' with parameter 'mid, last index of array'
+
+            IF result of function 'binary_search' with parameter 'search, kanan' equals with -1 THEN
+                DISPLAY -1;
+                STOP the FUNCTION
+            ELSE
+                DISPLAY 'mid' + CALL FUNCTION 'binary_search' with parameter 'search, kanan'
+            END IF
+        ELSE
+            DISPLAY 'mid'
+            STOP the FUNCTION
+    ELSE
+        IF 'array[mid]' not equals with 'search' OR 'array[mid]' is empty THEN
+            DISPLAY -1
+            STOP the FUNCTION
+        ELSE
+            DISPLAY 'mid'
+            STOP the FUNCTION
+        END IF
+    END IF
+END FUNCTION
+*/
